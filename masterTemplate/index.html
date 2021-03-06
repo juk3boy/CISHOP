@@ -1,0 +1,347 @@
+
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    <meta name="description" content="">
+    <meta name="author" content="">
+    <!-- <link rel="icon" href="/docs/4.0/assets/img/favicons/favicon.ico"> -->
+
+    <title>CI Shop</title>
+
+    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/4.0/examples/navbar-fixed/"> -->
+    
+    <!-- Fontawaseome CSS -->
+    <link rel="stylesheet" href="/assets/libs/fontawesome/css/all.css">
+    <link rel="stylesheet" href="/assets/libs/fontawesome/css/all.min.css">
+    <link rel="stylesheet" href="/assets/libs/fontawesome/css/brands.min.css">
+    <link rel="stylesheet" href="/assets/libs/fontawesome/css/fontawesome.css">
+    <link rel="stylesheet" href="/assets/libs/fontawesome/css/fontawesome.min.css">
+    <link rel="stylesheet" href="/assets/libs/fontawesome/css/regular.css">
+    <link rel="stylesheet" href="/assets/libs/fontawesome/css/regular.min.css">
+    
+    <!-- Bootstrap core CSS -->
+    <!-- <link rel="stylesheet" href="/assets/libs/bootstrap/css/bootstrap.css"> -->
+    <link rel="stylesheet" href="/assets/libs/bootstrap/css/bootstrap.min.css">
+
+
+    <!-- Custom styles for this template -->
+    <!-- <link href="navbar-top-fixed.css" rel="stylesheet"> -->
+      <link rel="stylesheet" href="/assets/css/app.css">
+
+  </head>
+
+  <body>
+
+          
+      <div class="row-sm-12">
+            <nav class="navbar navbar-expand-md navbar-light fixed-top bg-light">
+
+              <div class="container">
+                <a class="navbar-brand" href="#">CI Shop</a>
+                    <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarCollapse" aria-controls="navbarCollapse" aria-expanded="false" aria-label="Toggle navigation">
+                      <span class="navbar-toggler-icon"></span>
+                    </button>
+                      <div class="collapse navbar-collapse" id="navbarCollapse">
+                        <ul class="navbar-nav mr-auto">
+                            <li class="nav-item active">
+                              <a class="nav-link" href="#">Home</a>
+                            </li>
+                            
+                            <li class="nav-item dropdown">
+                              <a href="#" class="nav-link dropdown-toggle" role="button" id="dropdown-1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage</a>
+                              <div class="dropdown-menu" aria-labelledby="dropdown-1">
+                                <a href="/masterTemplate/admin-category.html" class="dropdown-item">Kategory</a>
+                                <a href="/masterTemplate/admin-product.html" class="dropdown-item">Produk</a>
+                                <a href="/masterTemplate/admin-order.html" class="dropdown-item">Order</a>
+                                <a href="/masterTemplate/admin-users.html" class="dropdown-item">Pengguna</a>
+                              </div>
+                            </li>
+                        </ul>
+
+                        <div class="col-sm-10 d-flex justify-content-end">
+                          <ul class="navbar-nav">
+                            <li class="nav-item">
+                                <a href="/masterTemplate/cart.html" class="nav-link"><i class="fas fa-shopping-cart"></i> Cart</a>
+                            </li>
+                            <li class="nav-item">
+                              <a href="/masterTemplate/login.html" class="nav-link">Login</a>
+                            </li>
+                            <li class="nav-item">
+                              <a href="/masterTemplate/register.html" class="nav-link">Register</a>
+                            </li>
+                            <li class="nav-item dropdown">
+                              <a href="#" class="nav-link dropdown-toggle" id="dropdown-1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Admin</a>
+                              <div class="dropdown-menu" aria-labelledby="dropdown-1">
+                                <a href="/masterTemplate/profile.html" class="dropdown-item">Profile</a>
+                                <a href="/masterTemplate/orders.html" class="dropdown-item">Order</a>
+                                <a href="#" class="dropdown-item">Logout</a>
+                              </div>
+                            </li>
+                          </ul>
+                        
+                        </div>
+                                        
+                    </div>
+                  
+                </div>    <!-- Akhir dari Row -->
+
+              </div>
+            </nav>
+
+          </div>
+
+            <main role="main" class="container">
+
+              <div class="row">
+
+                <!-- Kolom besar -->
+                <div class="col-md-9">
+
+                  <!-- Awal kotak kategori dan urutkan -->
+                  <div class="row">
+                    <div class="col-md-12">
+                      <div class="card mb-3">
+                        <div class="card-body">
+                          Kategori : <strong> Semua Kategori </strong>
+                          <span class="float-end">
+                            Urutkan Harga : <small> <a href="#" class="badge bg-primary">Termurah</a> | <a href="#" class="badge bg-primary">Termahal</a> </small>   
+                          </span>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
+
+                  <!-- Akhir kotak kategori dan urutkan -->
+
+                      <!-- Awal Gambar atas -->
+                    <div class="row">
+
+                              <!-- Card Product I -->
+                        <div class="col-md-6">
+                          <div class="card mb-3">
+                            <img src="http://placehold.co/100x70" alt="" class="img-top">
+                            <div class="card-body">
+                              <h4 class="card-title">Product Titel</h4>
+                              <p class="card-text"><strong> Rp. 100.000,- </strong></p>
+                              <p class="card-text">Some quick example text to build product crad</p>
+                              <a href="#" class="badge bg-primary"> <i class="fas fa-tags"></i>Category</a>
+                            </div>
+
+                            <div class="card-footer">
+                              <form action="">
+                                <div class="input-group">
+                                  <input type="number" class="form-control">
+                                  <div class="input-group-append">
+                                    <button class="btn btn-primary">Add To Cart</button>
+                                  </div>  
+                                </div>
+                              </form>
+                            </div>
+                          </div>  <!-- Penutup card -->
+                          
+                        </div>
+
+                              <!-- Akhir Card Product I -->
+
+                              
+                              <!-- Card Product II -->
+                        <div class="col-md-6">
+                          <div class="card mb-3">
+                            <img src="http://placehold.co/100x70" alt="" class="img-top">
+                            <div class="card-body">
+                              <h4 class="card-title">Product Titel</h4>
+                              <p class="card-text"><strong> Rp. 100.000,- </strong></p>
+                              <p class="card-text">Some quick example text to build product crad</p>
+                              <a href="#" class="badge bg-primary"> <i class="fas fa-tags"></i>Category</a>
+                            </div>
+                            <div class="card-footer">
+                              <form action="">
+                                <div class="input-group">
+                                  <input type="number" class="form-control">
+                                  <div class="input-group-append">
+                                    <button class="btn btn-primary">Add To Cart</button>
+                                  </div>  
+                                </div>
+                              </form>
+                            </div>
+                          </div>  <!-- Penutup card -->
+                          
+                        </div>
+
+                                <!-- Akhir Card Product II -->
+
+
+                          <!-- Card Product III -->
+                        <div class="col-md-6">
+                          <div class="card mb-3">
+                            <img src="http://placehold.co/100x70" alt="" class="img-top">
+                            <div class="card-body">
+                              <h4 class="card-title">Product Titel</h4>
+                              <p class="card-text"><strong> Rp. 100.000,- </strong></p>
+                              <p class="card-text">Some quick example text to build product crad</p>
+                              <a href="#" class="badge bg-primary"> <i class="fas fa-tags"></i>Category</a>
+                            </div>
+
+                            <div class="card-footer">
+                              <form action="">
+                                <div class="input-group">
+                                  <input type="number" class="form-control">
+                                  <div class="input-group-append">
+                                    <button class="btn btn-primary">Add To Cart</button>
+                                  </div>  
+                                </div>
+                              </form>
+                            </div>
+                          </div>  <!-- Penutup card -->
+                          
+                        </div>
+
+                                <!-- Akhir Card Product III -->
+
+                            <!-- Card Product IV -->
+                        <div class="col-md-6">
+                          <div class="card mb-3">
+                            <img src="http://placehold.co/100x70" alt="" class="img-top">
+                            <div class="card-body">
+                              <h4 class="card-title">Product Titel</h4>
+                              <p class="card-text"><strong> Rp. 100.000,- </strong></p>
+                              <p class="card-text">Some quick example text to build product crad</p>
+                              <a href="#" class="badge bg-primary"> <i class="fas fa-tags"></i>Category</a>
+                            </div>
+
+                            <div class="card-footer">
+                              <form action="">
+                                <div class="input-group">
+                                  <input type="number" class="form-control">
+                                  <div class="input-group-append">
+                                    <button class="btn btn-primary">Add To Cart</button>
+                                  </div>  
+                                </div>
+                              </form>
+                            </div>
+                          </div>  <!-- Penutup card -->
+                          
+                        </div>
+
+                        <!-- Akhir Card Product IV -->
+
+                    </div>
+                       <!-- Akhir Gambar atas --> 
+
+
+                    <nav aria-label="Page navigation example">
+                      <ul class="pagination">
+                        <li class="page-item"> <a href="#" class="page-link">Previous</a></li>
+                        <li class="page-item"> <a href="#" class="page-link">1</a></li>
+                        <li class="page-item"> <a href="#" class="page-link">2</a></li>
+                        <li class="page-item"> <a href="#" class="page-link">3</a></li>
+                        <li class="page-item"> <a href="#" class="page-link">Next</a></li>
+                      </ul>
+                    </nav>
+
+                </div>   <!-- Akhir dari col-md-9 -->
+                
+
+              
+                
+
+                <!-- Kolom kecil -->
+                <div class="col-md-3">
+                  
+                  <div class="row"> <!-- Awal dari row pencarian -->
+                    <div class="col-md-12">
+                      <div class="card mb-3">
+                          <div class="card-header">
+                            Pencarian
+                          </div>
+                          <div class="card-body">
+                              <div class="input-group">
+                                <input type="text" class="form-control">
+                                <div class="input-group-append">
+                                  <button class="btn btn-primary">Cari</button>
+                                </div>
+                              </div>
+                          </div>
+                      </div>
+
+                    </div>
+
+                  </div>  <!-- Awal dari row pencarian -->
+
+                  <div class="row">
+                    <div class="col-md-12">
+                        <div class="card mb-3">
+                          <div class="card-header">
+                              Kategori
+                          </div>
+                           
+                              <ul class="list-group list-group-flush">
+                                <li class="list-group-item">Semua Kategori</li>
+                                <li class="list-group-item">Kategori 1</li>
+                                <li class="list-group-item">Kategori 2</li>
+                              </ul>
+                           
+
+                          </div>
+                        </div>
+                    </div>
+                  </div>
+                  <!-- Akhir dari kolom kecil -->
+
+
+              </div>
+
+              
+
+
+
+
+
+
+              </div>
+
+              
+              
+            </main>
+
+
+
+
+  
+
+
+    <!-- Bootstrap core JavaScript
+    ================================================== -->
+    <!-- Placed at the end of the document so the pages load faster -->
+    <!-- <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js" integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous"></script> -->
+    <!-- <script>window.jQuery || document.write('<script src="../../assets/js/vendor/jquery-slim.min.js"><\/script>')</script> -->
+    <!-- <script src="../../assets/js/vendor/popper.min.js"></script> -->
+    <!-- <script src="/assets/libs/bootstrap/js/bootstrap.bundle.js"></script>
+    <script src="/assets/libs/bootstrap/js/bootstrap.bundle.min.js"></script>
+    <script src="/assets/libs/bootstrap/js/bootstrap.js"></script> -->
+    
+    <script src="/assets/libs/bootstrap/js/bootstrap.min.js"></script>
+    <!-- <script src="/assets/libs/bootstrap/js/popper.min.js"></script> -->
+
+    
+    <!-- Fontawasome JS -->
+
+    <script src="/assets/libs/fontawesome/js/all.js"></script>
+    <script src="/assets/libs/fontawesome/js/all.min.js"></script>
+    <script src="/assets/libs/fontawesome/js/brands.js"></script>
+    <script src="/assets/libs/fontawesome/js/brands.min.js"></script>
+    <script src="/assets/libs/fontawesome/js/fontawesome.js"></script>
+    <script src="/assets/libs/fontawesome/js/fontawesome.min.js"></script>
+    <script src="/assets/libs/fontawesome/js/regular.js"></script>
+    <script src="/assets/libs/fontawesome/js/regular.min.js"></script>
+
+      <!-- jquery -->
+
+      <script src="/assets/js/jquery-3.5.1.min.js"></script>
+      <script src="/assets/js/app.js"></script>
+
+    
+  </body>
+</html>
