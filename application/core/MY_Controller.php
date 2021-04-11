@@ -12,7 +12,6 @@ class MY_Controller extends CI_Controller
         if (file_exists(APPPATH . 'models/' . $model . '_model.php')) {
             $this->load->model($model . '_model', $model, true);
 
-
             //     // parent::__construct();
             // 	// $model = strtolower(get_class($this));
             // 	// if (file_exists(APPPATH . 'models/'. ucfirst($model) . '_model.php')) {

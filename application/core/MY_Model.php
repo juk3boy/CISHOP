@@ -1,12 +1,12 @@
 <?php
+
 defined('BASEPATH') or exit('No direct script access allowed');
 
 class MY_Model extends CI_Model
 {
 
-    protected $table = '';
-    protected $perPage = 0;
-
+    protected $table    = '';
+    protected $perPage    = 5;
 
     public function __construct()
     {
@@ -20,13 +20,12 @@ class MY_Model extends CI_Model
     }
 
 
-    /**
-     * Fungsi Validasi Input
-     * Rules: Dideklarasikan dalam masing-masing model
-     * 
-     * @return void
-     */
-
+    // /**
+    //  * Fungsi Validasi Input
+    //  * Rules: Dideklarasikan dalam masing-masing model
+    //  *
+    //  * @return void
+    //  */
     public function validate()
     {
         $this->load->library('form_validation');
@@ -35,134 +34,179 @@ class MY_Model extends CI_Model
             '<small class="form-text text-danger">',
             '</small>'
         );
-
         $validationRules = $this->getValidationRules();
 
         $this->form_validation->set_rules($validationRules);
 
         return $this->form_validation->run();
     }
-    /** penutup dari validate() */
 
 
+    // /**
+    //  * Seleksi data per-kolom
+    //  * Chain Method
+    //  *
+    //  * @param [type] $columns
+    //  * @return void
+    //  */
     public function select($columns)
     {
         $this->db->select($columns);
         return $this;
     }
-    /** penutup dari select() */
 
-
+    // /**
+    //  * Mencari suatu data pada kolom tertentu dengan data yang sama
+    //  * Chain Method
+    //  * @param [type] $column
+    //  * @param [type] $condition
+    //  * @return void
+    //  */
     public function where($column, $condition)
     {
         $this->db->where($column, $condition);
         return $this;
     }
-    /** penutup dari where() */
+
+    // /**
+    //  * Mencari suatu data pada kolom tertentu dengan data yang mirip
+    //  * Chain Method
+    //  * @param [type] $column
+    //  * @param [type] $condition
+    //  * @return void
+    //  */
 
     public function like($column, $condition)
     {
         $this->db->like($column, $condition);
         return $this;
     }
-    /** penutup dari like() */
 
+    // /**
+    //  * Mencari suatu data selanjutnya pada kolom tertentu dengan data yang mirip
+    //  * Chain Method
+    //  * @param [type] $column
+    //  * @param [type] $condition
+    //  * @return void
+    //  */
     public function orLike($column, $condition)
     {
         $this->db->or_like($column, $condition);
         return $this;
     }
-    /** penutup dari orLike() */
 
-    /** join tabel */       /** untuk type = left karna lebih banyak menggunakan left */
+    // /**
+    //  * Menggabungkan Table yang berelasi yang memiliki foreign key id_namatable
+    //  * Chain Method
+    //  * @param [type] $table
+    //  * @param string $type
+    //  * @return void
+    //  */
     public function join($table, $type = 'left')
     {
         $this->db->join($table, "$this->table.id_$table = $table.id", $type);
         return $this;
     }
-    /** penutup dari join() */
 
+    // /**
+    //  * Mengurutkan data dari hasil query dan kondisi
+    //  * Chain Method
+    //  * @param [type] $column
+    //  * @param string $order
+    //  * @return void
+    //  */
     public function orderBy($column, $order = 'asc')
     {
         $this->db->order_by($column, $order);
         return $this;
     }
-    /** penutup dari orderBy() */
 
-    /** ini jika kita ingin mengambil 1 baris saja pada database */
-    /** Method ini yaitu method terakhir utk digunakan dari method2 chain diatas (spt. select, like, orLike, dsb) */
+    // /**
+    //  * Menampilkan satu data dari hasil query dan kondisi
+    //  * Hasil Akhir Chain Method
+    //  * @return void
+    //  */
     public function first()
     {
         return $this->db->get($this->table)->row();
     }
 
-    /** dibawah ini jika kita ingin mengambil banyak data sekaligus */
+    // /**
+    //  * Menampilkan banyak data dari hasil query dan kondisi
+    //  * Hasil Akhir Chain Method
+    //  * @return void
+    //  */
     public function get()
     {
         return $this->db->get($this->table)->result();
     }
 
-    /** fungsi count ini hanya menampilkan data dari jumlah yg sudah kita query  */
+    // /**
+    //  * Menampilkan nilai jumlah data dari hasil query dan kondisi
+    //  * Hasil Akhir Chain Method
+    //  * @return void
+    //  */
     public function count()
     {
         return $this->db->count_all_results($this->table);
     }
 
+    // /**
+    //  * Menyimpan data baru ke dalam suatu tabel
+    //  *
+    //  * @param [type] $data
+    //  * @return void
+    //  */
     public function create($data)
     {
         $this->db->insert($this->table, $data);
         return $this->db->insert_id();
-        /** ini agar menghasilkan id yg melanjutkan yg sdh ada */
     }
 
-    /**
-     * Mengubah data yang ada pada suatu tabel dengan data baru
-     * 
-     * @param [type] $data
-     * @return void
-     */
-
+    // /**
+    //  * Mengubah data yang ada pada suatu tabel dengan data baru
+    //  *
+    //  * @param [type] $data
+    //  * @return void
+    //  */
     public function update($data)
     {
         return $this->db->update($this->table, $data);
     }
 
-    /**
-     * Menghapus suatu data dari hasil query dan kondisi
-     * 
-     * @return void
-     */
+    // /**
+    //  * Menghapus suatu data dari hasil query dan kondisi
+    //  * 
+    //  * @return void
+    //  */
     public function delete()
     {
         $this->db->delete($this->table);
         return $this->db->affected_rows();
     }
 
-    /**
-     * Menentukan limit data untuk ditampilkan 
-     * 
-     * @param [type] $page
-     * @return void
-     */
-
+    // /**
+    //  * Menentukan Limit data untuk ditampilkan
+    //  *
+    //  * @param [type] $page
+    //  * @return void
+    //  */
     public function paginate($page)
     {
         $this->db->limit(
             $this->perPage,
             $this->calculateRealOffset($page)
-            /** fungsi ini utk pagination halaman selanjutnya */
-
-
         );
-    }
-    /** penutup dari function paginate */
 
-    /**
-     * Menggantikan offset dengan nilai sesuai halam
-     * 
-     * @param [type] $page
-     * @return void
-     */
+        return $this;
+    }
+
+    // /**
+    //  * Menggantikan offset dengan nilai sesuai halaman
+    //  *
+    //  * @param [type] $page
+    //  * @return void
+    //  */
     public function calculateRealOffset($page)
     {
         if (is_null($page) || empty($page)) {
@@ -173,54 +217,50 @@ class MY_Model extends CI_Model
 
         return $offset;
     }
-    /** penutup dari function calculateRealOffset */
 
-    /**
-     * Membuat Pagination dengan style bootstrap 4
-     * 
-     * @param [type] $baseUrl
-     * @param [type] $uriSegment
-     * @param [type] $totalRows
-     * @return void
-     */
+    // /**
+    //  * Membuat Pagination dengan style bootstrap 4
+    //  *
+    //  * @param [type] $baseUrl
+    //  * @param [type] $uriSegment
+    //  * @param [type] $totalRows
+    //  * @return void
+    //  */
     public function makePagination($baseUrl, $uriSegment, $totalRows = null)
     {
-
         $this->load->library('pagination');
 
         $config = [
-            'base_url' => $baseUrl,
-            'uri_segment' => $uriSegment,
-            'per_page' => $this->perPage,
-            'total_rows' => $totalRows,
-            'use_page_numbers' => true,
+            'base_url'            => $baseUrl,
+            'uri_segment'        => $uriSegment,
+            'per_page'            => $this->perPage,
+            'total_rows'        => $totalRows,
+            'use_page_numbers'    => true,
 
-            /** dibawah ini tag untuk membuat pagination dari bootstrap pd ci */
-            'full_tag_open'     => '<ul class="pagination">',
-            'full_tag_close'    => '>/ul>',
+            'full_tag_open'        => '<ul class="pagination">',
+            'full_tag_close'    => '</ul>',
             'attributes'        => ['class' => 'page-link'],
             'first_link'        => false,
-            'last_link'         => false,
+            'last_link'            => false,
             'first_tag_open'    => '<li class="page-item">',
-            'first_tag_close'   => '</li>',
-            'prev_link'         => '&laquo',
-            'prev_tag_open'     => '<li class="page-item">',
+            'first_tag_close'    => '</li>',
+            'prev_link'            => '&laquo',
+            'prev_tag_open'        => '<li class="page-item">',
             'prev_tag_close'    => '</li>',
-            'next_link'         => '&raquo',
-            'next_tag_open'     => '<li class="page-item">',
+            'next_link'            => '&raquo',
+            'next_tag_open'        => '<li class="page-item">',
             'next_tag_close'    => '</li>',
-            'last_tag_open'     => '<li class="page-item">',
+            'last_tag_open'        => '<li class="page-item">',
             'last_tag_close'    => '</li>',
-            'cur_tag_open'      => '<li class="page-item active"><a href="#" class="page-link">',
-            'cur_tag_close'     => '<span class="sr-only">(current)</span></a></li>',
-            'num_tag_open'      => '<li class="page-item">',
-            'num_tag_close'     => '</li>',
-
+            'cur_tag_open'        => '<li class="page-item active"><a href="#" class="page-link">',
+            'cur_tag_close'        => '<span class="sr-only">(current)</span></a></li>',
+            'num_tag_open'        => '<li class="page-item">',
+            'num_tag_close'        => '</li>',
         ];
 
         $this->pagination->initialize($config);
         return $this->pagination->create_links();
     }
-    /** penutup dari makePagination */
 }
-/** class penutup MY_Model extends CI_Model */
+
+/* End of file MY_Model.php */
