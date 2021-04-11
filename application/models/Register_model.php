@@ -70,7 +70,7 @@ class Register_model extends MY_Model
 
         return $validationRules;
     }
-    /** Akhir dari function getValidationRules() */
+    // /** Akhir dari function getValidationRules() */
 
 
     public function run($input)
@@ -82,10 +82,10 @@ class Register_model extends MY_Model
             'role'        => 'member'
         ];
 
-        /** create($data) -> diambil dari model create yg sudah dibuat di MY_Model */
+        // /** create($data) -> diambil dari model create yg sudah dibuat di MY_Model */
         $user = $this->create($data);
 
-        /** variable user ($user) ini hanya menampilkan nilai baliknya saja */
+        // /** variable user ($user) ini hanya menampilkan nilai baliknya saja */
 
         $sess_data = [
             'id'       => $user,
@@ -94,7 +94,6 @@ class Register_model extends MY_Model
             'role'     => $data['role'],
             'is_login' => true
         ];
-
 
         $this->session->set_userdata($sess_data);
         return true;

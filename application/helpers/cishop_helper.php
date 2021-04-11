@@ -1,65 +1,52 @@
 <?php
 
-    function getDropdownList($table, $columns) {
+function getDropdownList($table, $columns)
+{
+    $CI        = &get_instance();
+    $query    = $CI->db->select($columns)->from($table)->get();
 
-        $CI     =& get_instance();
-        $query  =  $CI->db->select($columns)->form($table)->get();  /** ini berfungsi untuk mengambil data dari database */
+    if ($query->num_rows() >= 1) {
+        $option1    = ['' => '- Select -'];
+        $option2    = array_column($query->result_array(), $columns[1], $columns[0]);
+        $options    = $option1 + $option2;
 
+        return $options;
+    }
 
-        if ($query->num_rows() >= 1) {
-                    /** '' : value dr option  & '- Select -' ini yang akan muncul pada option select*/
-            $option1 = ['' => '- Select -'];
-            $option2 = array_column($query->result_array(), $columns[1], $columns[0]);
-            $options = $option1 + $option2;
+    return $options    = ['' => '- Select -'];
+}
 
-            return $options;
+function getCategories()
+{
+    $CI        = &get_instance();
+    $query    = $CI->db->get('category')->result();
+    return $query;
+}
 
-        }
+function getCart()
+{
+    $CI        = &get_instance();
+    $userId    = $CI->session->userdata('id');
 
-        return $options = ['' => '- Select -'];
-    }   /** penutut dari function getDropdownList */
-
-
-    function getCategories() {
-        $CI     =& get_instance();
-                            /** get('category) -> mengambil dari tabel database */
-        $query  = $CI->db->get('category')->result();
-
+    if ($userId) {
+        $query    = $CI->db->where('id_user', $userId)->count_all_results('cart');
         return $query;
-
-    } /** penutup dari getCategories() */
-
-    function getCart() {
-        $CI =& get_instance();
-
-        $userId = $CI->session->userdata('id');
-            if ($userId) {
-                            $query = $CI->db->where('id_user', $userId)->count_all_results('cart');
-                        }  
-
-                return false;
-            }  /** penutup dari getCart() */
-
-
-            /** berikut untuk mengenkripsi password menggunakan hash dari php */
-
-    function hashEncrypt($input) {
-
-        $hash = password_hash($input, PASSWORD_DEFAULT);
-
-        return $hash;
     }
 
+    return false;
+}
 
-    function hashEncryptVerify($input, $hash) {
+function hashEncrypt($input)
+{
+    $hash    = password_hash($input, PASSWORD_DEFAULT);
+    return $hash;
+}
 
-        if (password_verify($input, $hash)) {
-
-            return true;
-
-        } else {
-
-            return false;
-            
-        }
+function hashEncryptVerify($input, $hash)
+{
+    if (password_verify($input, $hash)) {
+        return true;
+    } else {
+        return false;
     }
+}
