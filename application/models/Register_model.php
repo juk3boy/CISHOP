@@ -98,6 +98,6 @@ class Register_model extends MY_Model
         $this->session->set_userdata($sess_data);
         return true;
     }
-    /** Akhir dari function run($input) */
+    // /** Akhir dari function run($input) */
 }
-/** Akhir dari register_model */
+// /** Akhir dari register_model */
