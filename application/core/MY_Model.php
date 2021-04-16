@@ -35,7 +35,7 @@ class MY_Model extends CI_Model
             '</small>'
         );
 
-        $validationRules = $this->getValidationRules();
+        $validationRules = $this->register->getValidationRules();
 
         $this->form_validation->set_rules($validationRules);
 
