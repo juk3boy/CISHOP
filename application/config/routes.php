@@ -52,3 +52,6 @@ defined('BASEPATH') or exit('No direct script access allowed');
 $route['default_controller'] = 'home';
 $route['404_override'] = '';
 $route['translate_uri_dashes'] = FALSE;
+
+// (:num) ini merupakan data yg kita keluarkan masing2 pada method index
+$route['category/(:num)'] = 'category/index/$1';

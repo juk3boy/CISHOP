@@ -1,0 +1,11 @@
+#gradient1{
+    background-image: linear-gradient(to right, #4682B4, #00FFFF, #00FA9A);
+    background-image: -o-linear-gradient(to right, #4682B4, #00FFFF, #00FA9A);
+    background-image: -moz-linear-gradient(to right, #4682B4, #00FFFF, #00FA9A);
+}
+
+#gradient2{
+    background-image: linear-gradient(340deg, yellow, red, skyblue);
+    background-image: -o-linear-gradient(340deg,yellow, red);
+    background-image: -moz-linear-gradient(340deg, yellow, red);
+}

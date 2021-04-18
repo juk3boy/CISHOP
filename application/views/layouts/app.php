@@ -17,9 +17,9 @@
 
   <!-- Bootstrap core CSS -->
   <!-- <link rel="stylesheet" href="/assets/libs/bootstrap/css/bootstrap.css"> -->
-  <link rel="stylesheet" href="<?= base_url(); ?>assets/libs/bootstrap/css/bootstrap.css">
+  <!-- <link rel="stylesheet" href="<?= base_url(); ?>assets/libs/bootstrap/css/bootstrap.css"> -->
   <link rel="stylesheet" href="<?= base_url(); ?>assets/libs/bootstrap/css/bootstrap.min.css">
-  <link rel="stylesheet" href="<?= base_url(); ?>assets/libs/bootstrap/css/bootstrap.min.css.map">
+
 
   <!-- Fontawaseome CSS -->
   <link rel="stylesheet" href="<?= base_url(); ?>assets/libs/fontawesome/css/all.css">
@@ -33,6 +33,8 @@
   <!-- Custom styles for this template -->
   <!-- <link href="navbar-top-fixed.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="<?= base_url(); ?>assets/css/app.css">
+
+  <link rel="stylesheet" href="/assets/css/customBackground.css">
 
 
 
