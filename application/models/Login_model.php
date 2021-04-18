@@ -49,7 +49,7 @@ class Login_model extends MY_Model
                 'name'      => $query->name,
                 'email'     => $query->email,
                 'role'      => $query->role,
-                'is_login'  => true
+                'is_login'  => true,
             ];
 
             $this->session->set_userdata($sess_data);

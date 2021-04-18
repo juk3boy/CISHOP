@@ -9,22 +9,24 @@
              <div class="card">
                  <div class="card-header">
                      <span>Kategori</span>
-                     <a href="/admin-category-form.html" class="btn btn-sm btn-secondary">Tambah</a>
+                     <a href=" <?= base_url('category/create') ?>" class="btn btn-sm btn-secondary">Tambah</a>
 
                      <div class="float-end">
-                         <form action="#">
-                             <div class="input-group">
-                                 <input type="text" class="form-control form-control-sm text-center">
-                                 <div class="input-group-append">
-                                     <button class="btn btn-secondary btn-sm" type="submit">
-                                         <i class="fas fa-search"></i>
-                                     </button>
-                                     <a href="#" class="btn btn-secondary btn-sm">
-                                         <i class="fas fa-eraser"></i>
-                                     </a>
-                                 </div> <!-- Akhir dari input-group-append -->
-                             </div>
-                         </form>
+                         <!-- <form action="#"> -->
+                         <?= form_open(base_url('category/search'), ['method' => 'POST']) ?>
+                         <div class="input-group">
+                             <input type="text" class="form-control form-control-sm text-center" placeholder="Cari ...." name="keyword" value="  <?= $this->session->userdata('keyword'); ?> ">
+                             <div class="input-group-append">
+                                 <button class="btn btn-secondary btn-sm" type="submit">
+                                     <i class="fas fa-search"></i>
+                                 </button>
+                                 <a href="  <?= base_url('category/reset') ?>" class="btn btn-secondary btn-sm">
+                                     <i class="fas fa-eraser"></i>
+                                 </a>
+                             </div> <!-- Akhir dari input-group-append -->
+                         </div>
+                         <!-- </form> -->
+                         <?= form_close() ?>
                      </div> <!-- Akhir float-end -->
                  </div>
                  <div class="card-body">
@@ -48,16 +50,18 @@
                                      <td> <?= $row->title ?> </td>
                                      <td> <?= $row->slug ?> </td>
                                      <td>
-                                         <form action="#">
-                                             <a href="#">
-                                                 <button class="btn btn-sm">
-                                                     <i class="fas fa-edit text-info"></i>
-                                                 </button>
-                                             </a>
-                                             <button class="btn btn-sm" type="submit" onclick="return confirm('Are You Sure ?');">
-                                                 <i class="fas fa-trash text-danger"></i>
+
+                                         <?= form_open("category/delete/$row->id", ['method' => 'POST']) ?>
+                                         <?= form_hidden('id', $row->id) ?>
+                                         <a href=" <?= base_url("category/edit/$row->id") ?>">
+                                             <button class="btn btn-sm">
+                                                 <i class="fas fa-edit text-info"></i>
                                              </button>
-                                         </form>
+                                         </a>
+                                         <button class="btn btn-sm" type="submit" onclick="return confirm('Are You Sure ?');">
+                                             <i class="fas fa-trash text-danger"></i>
+                                         </button>
+                                         <?= form_close() ?>
                                      </td>
                                  </tr>
                              <?php endforeach ?>

@@ -26,7 +26,7 @@ class Category_model extends MY_Model
 
             [
                 'field' => 'title',
-                'label' => 'Kategoru',
+                'label' => 'Kategori',
                 'rules' => 'trim|required'
             ]
 
