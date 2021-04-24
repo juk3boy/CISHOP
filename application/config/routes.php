@@ -55,3 +55,4 @@ $route['translate_uri_dashes'] = FALSE;
 
 // (:num) ini merupakan data yg kita keluarkan masing2 pada method index
 $route['category/(:num)'] = 'category/index/$1';
+$route['product/(:num)'] = 'product/index/$1';

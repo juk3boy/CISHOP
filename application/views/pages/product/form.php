@@ -19,7 +19,7 @@
                     <?= form_open_multipart($form_action, ['method' => 'POST']) ?>
                     <?= isset($input->id) ? form_hidden('id', $input->id) : '' ?>
                     <div class="form-group">
-                        <label for="">Produk</label>
+                        <label for="title">Produk</label>
                         <?= form_input('title', $input->title, ['class' => 'form-control', 'id' => 'title', 'onkeyup' => 'createSlug()', 'required' => true, 'autofocus' => true]) ?>
                         <?= form_error('title') ?>
                     </div>
@@ -64,6 +64,10 @@
                             <small class="form-text text-danger">
                                 <?= $this->session->flashdata('image_error') ?>
                             </small>
+                        <?php endif ?>
+
+                        <?php if ($input->image) : ?>
+                            <img src=" <?= base_url("/assets/images/product/$input->image") ?>" alt="" height="150">
                         <?php endif ?>
                     </div>
 

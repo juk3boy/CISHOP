@@ -5,14 +5,14 @@ function createSlug() {
     $('#slug').val(string_to_slug(title));
 }
 
-function string_to_slug (str) {
+function string_to_slug(str) {
     str = str.replace(/^\s+|\s+$/g, ''); // trim
     str = str.toLowerCase();
-  
+
     // remove accents, swap ñ for n, etc
     var from = "àáäâèéëêìíïîòóöôùúüûñç·/_,:;";
-    var to   = "aaaaeeeeiiiioooouuuunc------";
-    for (var i=0, l=from.length ; i<l ; i++) {
+    var to = "aaaaeeeeiiiioooouuuunc------";
+    for (var i = 0, l = from.length; i < l; i++) {
         str = str.replace(new RegExp(from.charAt(i), 'g'), to.charAt(i));
     }
 
@@ -23,3 +23,8 @@ function string_to_slug (str) {
     return str;
 }
 
+
+var alertList = document.querySelectorAll('.alert')
+alertList.forEach(function (alert) {
+    new bootstrap.Alert(alert)
+})

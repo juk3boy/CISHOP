@@ -30,10 +30,10 @@ if ($warning) {
 
                 <div class="col-md-12">
 
-                        <div class="alert <?= $alert_status ?> alert-dismissible fade show" role="alert">
+                        <div class="alert <?= $alert_status ?> alert-dismissible fade show" role="alert" data-bs-dismiss="alert">
 
                                 <strong> <?= $status ?> </strong> <?= $message ?>
-                                <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
+                                <button type="button" class="btn-close" aria-label="Close"></button>
 
                         </div>
 
