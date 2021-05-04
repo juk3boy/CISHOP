@@ -70,6 +70,8 @@ class Product_model extends MY_Model
             'max_height'        => 0,
             'overwrite'         => true,
             'file_ext_tolower'  => true,
+            'x_axis'            => 100,
+            'y_axis'            => 70
         ];
 
         $this->load->library('upload', $config);

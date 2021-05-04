@@ -49,31 +49,32 @@
                                     <td>
                                         <p>
                                         <p>
-                                            <img src="<?= $row->image ? base_url("/assets/images/user/$row->image") : base_url("assets/images/user/default.png") ?>" alt="" height="50">
+                                            <img src="<?= $row->image ? base_url("assets/images/user/$row->image") : base_url("assets/images/user/default.png") ?>" alt="" height="50">
                                             <!-- product_title dibwah diambil dari controller product aliases product karena ada yang sama dgn kategori -->
                                             <?= $row->name ?>
                                         </p>
                                         </p>
                                     </td>
-                                    <td>
-                                        <?= $row->email ?>
-                                    </td>
-                                    <td>
-                                        <?= $row->email ?>
-                                    </td>
+                                    <td><?= $row->email ?></td>
+                                    <td><?= $row->role ?></td>
                                     <td><?= $row->is_active ? 'Active' : 'Tidak Active'  ?></td>
+
+                                    <!-- button edit & delete -->
                                     <td>
-                                        <form action="#">
-                                            <a href="#">
-                                                <button class="btn btn-sm">
-                                                    <i class="fas fa-edit text-info"></i>
-                                                </button>
-                                            </a>
-                                            <button class="btn btn-sm" type="submit" onclick="return confirm('Are You Sure ?');">
-                                                <i class="fas fa-trash text-danger"></i>
-                                            </button>
-                                        </form>
+
+                                        <?= form_open(base_url("user/delete/$row->id"), ['method' => 'POST']) ?>
+                                        <?= form_hidden('id', $row->id) ?>
+
+                                        <a href="<?= base_url("user/edit/$row->id") ?>" class="btn btn-sm">
+                                            <i class="fas fa-edit text-info"></i>
+                                        </a>
+
+                                        <button class="btn btn-sm" type="submit" onclick="return confirm('Apakah yakin ingin menghapus?')">
+                                            <i class="fas fa-trash text-danger"></i>
+                                        </button>
+                                        <?= form_close() ?>
                                     </td>
+                                    <!-- Akhir button edit & delete -->
                                 </tr>
 
                             <?php endforeach ?>

@@ -10,7 +10,12 @@ class Category extends MY_Controller
     public function __construct()
     {
         parent::__construct();
-        //Do your magic here
+        $role =  $this->session->userdata('role');
+        if ($role != 'admin') {
+            /** dibwah ini fungsi nya untuk menendang kembali ke halaman utama */
+            redirect(base_url('/'));
+            return;
+        }
     }
 
 

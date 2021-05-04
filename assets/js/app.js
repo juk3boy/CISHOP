@@ -1,4 +1,11 @@
+var popoverTriggerList = [].slice.call(document.querySelectorAll('[data-bs-toggle="popover"]'))
+var popoverList = popoverTriggerList.map(function (popoverTriggerEl) {
+    return new bootstrap.Popover(popoverTriggerEl)
+})
 
+var popover = new bootstrap.Popover(document.querySelector('.popover-dismiss'), {
+    trigger: 'focus'
+})
 
 function createSlug() {
     let title = $('#title').val();
@@ -24,7 +31,9 @@ function string_to_slug(str) {
 }
 
 
-var alertList = document.querySelectorAll('.alert')
-alertList.forEach(function (alert) {
-    new bootstrap.Alert(alert)
-})
+// var alertList = document.querySelectorAll('.alert')
+// alertList.forEach(function (alert) {
+//     new bootstrap.Alert(alert)
+// })
+
+

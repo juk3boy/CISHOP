@@ -10,7 +10,12 @@ class Product extends MY_Controller
     public function __construct()
     {
         parent::__construct();
-        //Do your magic here
+        $role =  $this->session->userdata('role');
+        if ($role != 'admin') {
+            /** dibwah ini fungsi nya untuk menendang kembali ke halaman utama */
+            redirect(base_url('/'));
+            return;
+        }
     }
 
     public function index($page = null)
@@ -147,7 +152,7 @@ class Product extends MY_Controller
                 }
                 $data['input']->image = $upload['file_name'];
             } else {
-                redirect(base_url('product/edit/$id'));
+                redirect(base_url("product/edit/$id"));
             }
         }
 
@@ -200,7 +205,7 @@ class Product extends MY_Controller
         redirect(base_url('product'));
     }
 
-    /** AKHIR MENU EDIT */
+    /** AKHIR MENU DELETE */
 
     /** UNIQUE_SLUG */
 

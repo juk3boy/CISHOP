@@ -21,6 +21,7 @@ if ($warning) {
         $status         = 'Warning';
         $message        = $warning;
 }
+
 ?>
 
 
@@ -30,10 +31,10 @@ if ($warning) {
 
                 <div class="col-md-12">
 
-                        <div class="alert <?= $alert_status ?> alert-dismissible fade show" role="alert" data-bs-dismiss="alert">
+                        <div class="alert <?= $alert_status ?> alert-dismissible fade show" role="alert">
 
                                 <strong> <?= $status ?> </strong> <?= $message ?>
-                                <button type="button" class="btn-close" aria-label="Close"></button>
+                                <button type="button" class="btn-close" aria-label="Close" data-bs-dismiss="alert"> </button>
 
                         </div>
 

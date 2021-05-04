@@ -50,10 +50,10 @@ class User_model extends MY_Model
             'allowed_types'      => 'jpg|gif|png|jpeg|JPG|PNG',
             'max_size'           => 1024,
             /** arti nya 1 MB */
-            'max_width'         => 0,
-            'max_height'        => 0,
-            'overwrite'         => true,
-            'file_ext_tolower'  => true,
+            'max_width'          => 0,
+            'max_height'         => 0,
+            'overwrite'          => true,
+            'file_ext_tolower'   => true,
         ];
 
         $this->load->library('upload', $config);

@@ -16,18 +16,18 @@
                      <?= form_open($form_action, ['method' => 'POST']) ?>
 
                      <?= isset($input->id) ? form_hidden('id', $input->id) : '' ?>
-                     <div class="form-group">
-                         <label for="">Kategori</label>
+                     <div class="form-group mb-2">
+                         <label for="title">Kategori</label>
                          <!-- <input type="text" class="form-control" id="title" onkeyup="createSlug()" required autofocus> -->
                          <?= form_input('title', $input->title, ['class' => 'form-control', 'id' => 'title', 'onkeyup' => 'createSlug()', 'required' => true, 'autofocus' => true]) ?>
                          <!-- <small class="form-text text-danger">Kategori harus diisi</small> -->
                          <?= form_error('title') ?>
                      </div>
-                     <div class="form-group">
+                     <div class="form-group mb-2">
 
 
 
-                         <label for="">Slug</label>
+                         <label for="slug" mb-2>Slug</label>
                          <!-- <input type="text" class="form-control" id="slug" required> -->
                          <?= form_input('slug', $input->slug, ['class' => 'form-control', 'id' => 'slug', 'required' => true]) ?>
                          <!-- <small class="form-text text-danger"></small> -->

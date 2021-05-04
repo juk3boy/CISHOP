@@ -4,7 +4,7 @@
 
         <div class="col-md-10 mx-auto">
 
-            <div class="card">
+            <div class="card mb-3">
                 <div class="card-header">
                     <span>Formulir Pengguna</span>
 
@@ -40,11 +40,11 @@
                         <br>
                         <div class="form-check form-check-inline">
                             <!-- <input type="radio" name="status" class="form-check-input" value="1"> -->
-                            <?= form_radio(['name' => 'role', 'value' => 'admin', 'checked' => $input->role == 'admin' ? true : false, 'class' => 'form-check-input']) ?>
+                            <?= form_radio(['name' => 'role', 'value' => 'admin', 'checked' => $input->role == 'admin' ? true : false, 'form-check-input']) ?>
                             <label for="" class="form-check-label">Admin</label>
                         </div> <!-- Akhir dari form-check form-check-inline -->
                         <div class="form-check form-check-inline">
-                            <?= form_radio(['name' => 'role', 'value' => 'member', 'checked' => $input->role == 'member' ? true : false, 'class' => 'form-check-input']) ?>
+                            <?= form_radio(['name' => 'role', 'value' => 'member', 'checked' => $input->role == 'member' ? true : false, 'form-check-input']) ?>
                             <label for="" class="form-check-label">Member</label>
                         </div> <!-- Akhir dari form-check form-check-inline -->
                     </div>
@@ -54,11 +54,11 @@
                         <br>
                         <div class="form-check form-check-inline">
                             <!-- <input type="radio" name="status" class="form-check-input" value="1"> -->
-                            <?= form_radio(['name' => 'is_active', 'value' => '1', 'checked' => $input->is_active == 'admin' ? true : false, 'class' => 'form-check-input']) ?>
+                            <?= form_radio(['name' => 'is_active', 'value' => '1', 'checked' => $input->is_active == '1' ? true : false, 'form-check-input']) ?>
                             <label for="" class="form-check-label">Aktif</label>
                         </div> <!-- Akhir dari form-check form-check-inline -->
                         <div class="form-check form-check-inline">
-                            <?= form_radio(['name' => 'is_active', 'value' => '0', 'checked' => $input->is_active == 'member' ? true : false, 'class' => 'form-check-input']) ?>
+                            <?= form_radio(['name' => 'is_active', 'value' => '0', 'checked' => $input->is_active == '0' ? true : false, 'form-check-input']) ?>
                             <label for="" class="form-check-label">Tidak Aktif</label>
                         </div> <!-- Akhir dari form-check form-check-inline -->
                     </div>
@@ -75,7 +75,7 @@
                         <?php endif ?>
 
                         <?php if (isset($input->image)) : ?>
-                            <img src=" <?= base_url("/assets/images/user/$input->image") ?>" alt="" height="150">
+                            <img src=" <?= base_url("/assets/images/user/$input->image") ?>" alt="" height="50">
                         <?php endif ?>
                     </div>
 

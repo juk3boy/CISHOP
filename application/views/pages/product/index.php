@@ -16,12 +16,13 @@
                              <div class="input-group">
                                  <input type="text" name="keyword" class="form-control form-control-sm text-center" placeholder="Cari" value=" <?= $this->session->userdata('keyword') ?> ">
                                  <div class="input-group-append">
-                                     <button class="btn btn-secondary btn-sm" type="submit">
+                                     <button class="btn btn-secondary" type="submit">
                                          <i class="fas fa-search"></i>
                                      </button>
-                                     <a href="<?= base_url("product/reset") ?>" class="btn btn-secondary btn-sm">
+                                     <a href="<?= base_url("product/reset") ?>" class="btn btn-secondary">
                                          <i class="fas fa-eraser"></i>
                                      </a>
+
                                  </div> <!-- Akhir dari input-group-append -->
                              </div>
                          </form>
@@ -31,7 +32,7 @@
                      <table class="table">
                          <thead>
                              <tr>
-                                 <th scope="col">#</th>
+                                 <th scope="col">No.</th>
                                  <th scope="col">Produk</th>
                                  <th scope="col" class="text-center">Kategori</th>
                                  <th scope="col" class="text-center">Harga</th>
@@ -40,18 +41,18 @@
                              </tr>
                          </thead>
 
-                         <tbody>
+                         <tbody class="align-middle">
                              <!-- Perulangan untuk product -->
                              <?php $no = 0;
                                 foreach ($content as $row) : $no++; ?>
                                  <tr>
                                      <td class="text-center"> <?= $no ?></td>
                                      <td>
-                                         <p>
-                                             <img src="<?= $row->image ? base_url("/assets/images/product/$row->image") : base_url("assets/images/product/default.jpg") ?>" alt="" height="50">
+                                         <span class="align-middle">
+                                             <img class="align-middle" src="<?= $row->image ? base_url("/assets/images/product/$row->image") : base_url("assets/images/product/default.jpg") ?>" alt="" height="50">
                                              <!-- product_title dibwah diambil dari controller product aliases product karena ada yang sama dgn kategori -->
                                              <?= $row->product_title ?>
-                                         </p>
+                                         </span>
                                      </td>
                                      <td>
                                          <span class="badge bg-primary"> <i class="fas fa-tags"></i> <?= $row->category_title ?> </span>

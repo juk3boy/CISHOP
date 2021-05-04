@@ -44,7 +44,7 @@ class Login extends MY_Controller
             redirect(base_url());
         } else {
             $this->session->set_flashdata('error', 'E-Mail atau Password salah atau akun ada belum aktif !!');
-            return (base_url('login'));
+            redirect(base_url('login'));
         }
     }
 }
