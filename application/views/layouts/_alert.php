@@ -27,7 +27,11 @@ if ($warning) {
 
 <?php if ($success || $error || $warning) : ?>
 
-        <div class="row">
+
+
+        <div class="flash-data" data-flashdata="<?= $this->session->flashdata('$alert_status') ?>"></div>
+
+        <!-- <div class="row">
 
                 <div class="col-md-12">
 
@@ -41,7 +45,8 @@ if ($warning) {
                 </div>
 
 
-        </div> <!-- End row -->
+        </div>  -->
+        <!-- End row -->
 
 
 <?php endif ?>

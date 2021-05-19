@@ -20,7 +20,6 @@
 
                 <!-- <form action=""> -->
                 <?= form_open_multipart($form_action, ['method' => 'POST']) ?>
-
                 <?= form_hidden('id_orders', $order->id) ?>
 
                 <div class="card-body">
@@ -59,16 +58,11 @@
 
                 </div> <!-- Akhir dari card-body -->
 
-
-
-
-
                 <div class="card-footer">
                     <button type="submit" class="btn btn-success">Konfirmasi pembayaran</button>
                 </div>
 
-                <?= form_close() ?>
-                <!-- </form> -->
+                </form>
 
 
             </div> <!-- Akhir dari card pd col-md-9 -->

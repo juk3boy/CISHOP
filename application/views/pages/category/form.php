@@ -1,5 +1,7 @@
  <main role="main" class="container">
 
+     <?php $this->session->flashdata('flash') ?>
+
      <div class="row">
 
          <div class="col-md-10 mx-auto">

@@ -86,7 +86,7 @@
 
   <script src="<?= base_url(); ?>assets/js/app.js"></script>
   <script src="<?= base_url() ?>assets/sweetalert/dist/sweetalert2.all.min.js"></script>
-  <!-- <script src="<?= base_url() ?>assets/js/myscript.js"></script> -->
+  <script src="<?= base_url() ?>assets/js/myscript.js"></script>
 
 
 </body>

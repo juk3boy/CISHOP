@@ -5,7 +5,7 @@ if ($status == 'waiting') {
     $status = 'Menunggu Pembayaran';
 }
 
-if ($status == 'padi') {
+if ($status == 'paid') {
     $badge_status = 'bg-info';
     $status = 'Dibayarkan';
 }

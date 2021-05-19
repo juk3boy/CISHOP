@@ -31,9 +31,9 @@ function string_to_slug(str) {
 }
 
 
-// var alertList = document.querySelectorAll('.alert')
-// alertList.forEach(function (alert) {
-//     new bootstrap.Alert(alert)
-// })
+var alertList = document.querySelectorAll('.alert')
+alertList.forEach(function (alert) {
+    new bootstrap.Alert(alert)
+})
 
 

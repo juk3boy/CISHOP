@@ -50,6 +50,8 @@
 
                                     <td class="text-center">Rp. <?= number_format($row->subtotal, 0, ',', '.') ?>,-</td>
 
+
+
                                 </tr>
 
                                 <tr>

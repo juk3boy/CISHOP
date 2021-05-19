@@ -1,7 +1,7 @@
  <main role="main" class="container">
 
      <?php $this->load->view('layouts/_alert') ?>
-
+     <!-- <div class="flash-data" data-flashdata=" <?php $this->session->set_flashdata('success'); ?>"></div> -->
      <div class="row">
 
          <div class="col-md-10 mx-auto">

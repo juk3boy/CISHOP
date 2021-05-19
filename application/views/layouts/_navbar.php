@@ -15,10 +15,10 @@
         <li class="nav-item dropdown">
           <a href="#" class="nav-link dropdown-toggle" role="button" id="dropdown-1" data-bs-toggle="dropdown" aria-haspopup="true" aria-expanded="false">Manage</a>
           <div class="dropdown-menu" aria-labelledby="dropdown-1">
-            <a href=" <?= base_url('category'); ?>" class="dropdown-item">Kategori</a>
-            <a href="<?= base_url('product'); ?>" class="dropdown-item">Produk</a>
+            <a href="<?= base_url('/category'); ?>" class="dropdown-item">Kategori</a>
+            <a href="<?= base_url('/product'); ?>" class="dropdown-item">Produk</a>
             <a href="<?= base_url('/myorder') ?>" class="dropdown-item">Order</a>
-            <a href="<?= base_url('user'); ?>" class="dropdown-item">Pengguna</a>
+            <a href="<?= base_url('/user'); ?>" class="dropdown-item">Pengguna</a>
 
             <!-- /masterTemplate/admin-users.html -->
           </div>
