@@ -117,7 +117,7 @@ class Myorder extends MY_Controller
 
         /** dibawah ini mengoverride tabel dr model mya order */
         $this->myorder->table = 'orders_confirm';
-        // unset($data['input']->invoice);  // ini tujuannya agar kita tidak menginput invoce karene tidak ada field invoice
+        unset($data['input']->invoice);  // ini tujuannya agar kita tidak menginput invoce karene tidak ada field invoice
 
         if ($this->myorder->create($data['input'])) {
             $this->myorder->table = 'orders';

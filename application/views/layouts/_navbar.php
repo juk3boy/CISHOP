@@ -49,7 +49,7 @@
               <a href="<?= base_url('/login'); ?>" class="nav-link">Login</a>
             </li>
             <li class="nav-item">
-              <a href=" <?= base_url('/register') ?>" class="nav-link">Register</a>
+              <a href="<?= base_url('/register'); ?>" class="nav-link">Register</a>
             </li>
 
           <?php else : ?>

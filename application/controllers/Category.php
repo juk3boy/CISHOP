@@ -49,7 +49,7 @@ class Category extends MY_Controller
         $data['total_rows'] = $this->category->like('title', $keyword)->count();
         $data['pagination'] = $this->category->makePagination(
             base_url('category/seacrh'),
-            3,
+            4,
             $data['total_rows']
         );
         $data['page']       = 'pages/category/index';

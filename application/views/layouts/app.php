@@ -34,7 +34,7 @@
   <!-- <link href="navbar-top-fixed.css" rel="stylesheet"> -->
   <link rel="stylesheet" href="<?= base_url(); ?>assets/css/app.css">
 
-  <link rel="stylesheet" href="/assets/css/customBackground.css">
+  <link rel="stylesheet" href="<?= base_url(); ?>assets/css/customBackground.css">
 
 
 
