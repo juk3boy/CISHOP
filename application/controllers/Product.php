@@ -70,7 +70,7 @@ class Product extends MY_Controller
         $data['total_rows'] = $this->product->like('product.title', $keyword)->count();
         $data['pagination'] = $this->product->makePagination(
             base_url('product/seacrh'),
-            3,
+            2,
             $data['total_rows']
         );
         $data['page']       = 'pages/product/index';

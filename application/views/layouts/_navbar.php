@@ -34,7 +34,7 @@
         <ul class="navbar-nav">
           <li class="nav-item">
 
-            <a href="<?= base_url('cart'); ?>" class="nav-link"><i class="fas fa-shopping-cart"></i>Cart
+            <a href="<?= base_url('/cart'); ?>" class="nav-link"><i class="fas fa-shopping-cart"></i>Cart
               <span class="badge bg-primary">
                 <?= getCart(); ?></a>
             </span>

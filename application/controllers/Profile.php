@@ -26,6 +26,8 @@ class Profile extends MY_Controller
         $data['content'] = $this->profile->where('id', $this->id)->first();
         $data['page'] = 'pages/profile/index';
 
+
+
         return $this->view($data);
     }
 
@@ -36,7 +38,7 @@ class Profile extends MY_Controller
 
         if (!$data['content']) {
             $this->session->set_flashdata('warning', 'Maaf, Data tidak ditemukan !!!');
-            redirect(base_url('profile'));
+            redirect(base_url('index.php/profile'));
         }
 
         if (!$_POST) {

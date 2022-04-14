@@ -63,6 +63,12 @@ class Myorder extends MY_Controller
             ->join('product')
             ->where('orders_detail.id_orders', $data['order']->id)
             ->get();
+
+        if ($data['order']->status !== 'waiting') {
+            //maka kita akan lakukan override terlebih dahulu
+            $this->myorder->table = 'orders_confirm';
+            $data['orders_confirm'] = $this->myorder->where('id_orders', $data['order']->id)->first();
+        }
         $data['page'] = 'pages/myorder/detail';
 
         $this->view($data);

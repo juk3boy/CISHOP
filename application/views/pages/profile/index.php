@@ -20,7 +20,7 @@
                 <div class="col-md-4">
                     <div class="card">
                         <div class="card-body text-center">
-                            <img src=" <?= $content->image ? base_url("/assets/images/user/$content->image") : base_url("/assets/images/user/default.png") ?>" alt="" height="180">
+                            <img src=" <?= $content->image ? base_url("/assets/images/user/$content->image") : base_url("/assets/images/user/default.png"); ?>" alt="" height="180">
                         </div>
                     </div>
                 </div>

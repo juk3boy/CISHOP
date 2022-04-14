@@ -40,7 +40,7 @@
 
 </head>
 
-<body>
+ <body class="sb-nav-fixed">
 
   <!-- NavBar -->
   <?php $this->load->view('layouts/_navbar');  ?>

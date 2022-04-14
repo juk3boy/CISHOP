@@ -70,7 +70,7 @@ class Shop extends MY_Controller
         $data['total_rows'] = $this->shop->where('product.is_available', 1)->where('category.slug', $category)->join('category')->count();
         $data['pagination'] = $this->shop->makePagination(
             base_url("shop/category/$category"),
-            4,
+            3,
             $data['total_rows'],
         );
         /** ucword = untuk mengubah menjadi huruf capital */

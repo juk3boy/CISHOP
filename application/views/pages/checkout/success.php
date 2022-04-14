@@ -1,6 +1,6 @@
 <main role="main" class="container">
 
-    <?php $this->load->view('layouts/_alert') ?>
+    <?php $this->load->view('layouts/_alert'); ?>
 
     <div class="row">
 

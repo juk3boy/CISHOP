@@ -41,10 +41,10 @@ class Login extends MY_Controller
 
         if ($this->login->run($input)) {
             $this->session->set_flashdata('success', 'Berhasil melakukan login');
-            redirect(base_url());
+            redirect(base_url('/'));
         } else {
             $this->session->set_flashdata('error', 'E-Mail atau Password salah atau akun ada belum aktif !!');
-            redirect(base_url('login'));
+            redirect(base_url('/login'));
         }
     }
 }

@@ -64,11 +64,35 @@
                     </table> <!-- Akhir dari table -->
 
                 </div>
+                <?php if ($order->status == 'waiting') : ?>
+                    <div class="card-footer">
+                        <a href="<?= base_url("/myorder/confirm/$order->invoice") ?>" class="btn btn-success">Konfirmasi Pembayaran</a>
+                    </div>
 
-                <div class="card-footer">
-                    <a href="<?= base_url("/myorder/confirm/$order->invoice") ?>" class="btn btn-success">Konfirmasi Pembayaran</a>
-                </div>
+                <?php endif ?>
             </div> <!-- Akhir dari card pd col-md-9 -->
+
+            <!-- kita akan membuat validasi setelah card -->
+            <?php if (isset($orders_confirm)) : ?>
+                <div class="row mb-3">
+                    <div class="col-md-8">
+                        <div class="card">
+                            <div class="card-header">
+                                Bukti Transfer
+                            </div>
+                            <div class="card-body">
+                                <p>No rekening : <?= $orders_confirm->account_number ?></p>
+                                <p>A/N : <?= $orders_confirm->account_name ?></p>
+                                <p>Nominal : Rp. <?= number_format($row->price, 0, ',', '.') ?>,-</p>
+                                <p>Catatan : <?= $orders_confirm->note ?></p>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-4">
+                        <img src="<?= base_url("/images/confirm/$orders_confirm->image")  ?>" alt="" height="200">
+                    </div>
+                </div>
+            <?php endif ?>
 
         </div> <!-- Akhir dari col-md-9 -->
 
